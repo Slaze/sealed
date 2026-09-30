@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#2A1C14" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sealed" />
+  <title>Sealed</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icons/icon.svg" />
+  <link rel="apple-touch-icon" href="./icons/icon.svg" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><span class="seal-dot">S</span> SEALED</div>
+      <button class="icon-btn" type="button" id="list-toggle">List</button>
+    </header>
+    <main id="view-desk" class="screen">
+      <section class="brief">
+        <h2>Wednesday briefing</h2>
+        <p id="brief-text"></p>
+        <div class="ribbon" id="chapter-ribbon"></div>
+      </section>
+      <div class="desk-grid" id="desk-piles"></div>
+      <button class="notice" type="button" id="noticeboard">
+        <strong>Noticeboard</strong>
+        <span><span id="notice-count">0</span> flyers</span>
+      </button>
+    </main>
+    <main id="view-list" class="screen hidden">
+      <input class="search" id="search" type="search" placeholder="Search subject, name, address" enterkeyhint="search" />
+      <div id="list-rows"></div>
+    </main>
+    <main id="view-letter" class="screen hidden">
+      <div class="letter">
+        <div class="letter-head">
+          <button class="icon-btn" type="button" id="back-letter" style="background:#efe4d2;color:#1c1917">‹</button>
+          <div class="portrait" id="letter-portrait"></div>
+          <div>
+            <strong id="letter-name"></strong>
+            <div class="email" id="letter-email"></div>
+          </div>
+        </div>
+        <h1 id="letter-subject"></h1>
+        <div class="body" id="letter-body"></div>
+        <div class="attach hidden" id="letter-attach"></div>
+        <div class="actions">
+          <button type="button" disabled>Reply</button>
+          <button type="button" id="file-btn">File</button>
+          <button type="button" id="star-btn">☆ Star</button>
+          <button type="button" disabled>More</button>
+        </div>
+        <div class="chapter-bar" id="letter-chapter"></div>
+        <div class="bar"><i id="letter-bar"></i></div>
+      </div>
+    </main>
+    <main id="view-chronicle" class="screen hidden">
+      <h2 style="margin:0 0 12px">Chronicle</h2>
+      <div id="chronicle-list"></div>
+    </main>
+    <main id="view-people" class="screen hidden">
+      <h2 style="margin:0 0 12px">The Court</h2>
+      <div id="people-list"></div>
+    </main>
+    <main id="view-settings" class="screen hidden">
+      <h2 style="margin:0 0 12px">Settings</h2>
+      <article class="entry">
+        <p>This stub uses twelve fixture letters. Nothing talks to Gmail yet.</p>
+        <p class="fn">State lives in localStorage. Reset if the desk feels stuck.</p>
+      </article>
+      <button class="primary" type="button" id="reset-btn">Reset desk</button>
+    </main>
+    <div id="sheet" class="sheet-bg hidden"></div>
+    <div id="toast" class="sheet-bg hidden"></div>
+    <nav class="tabs">
+      <button type="button" data-tab="desk">Desk</button>
+      <button type="button" data-tab="chronicle">Chronicle</button>
+      <button type="button" data-tab="people">People</button>
+      <button type="button" data-tab="settings">Settings</button>
+    </nav>
+  </div>
+  <script src="./data/fixture.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
