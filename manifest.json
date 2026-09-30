@@ -1,0 +1,19 @@
+{
+  "name": "Sealed",
+  "short_name": "Sealed",
+  "description": "Read mail as sealed letters.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#2A1C14",
+  "theme_color": "#2A1C14",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
